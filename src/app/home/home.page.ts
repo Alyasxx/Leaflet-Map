@@ -64,6 +64,10 @@ export class HomePage {
     });
     // Mengatur marker dengan ikon kustom
     var marker = L.marker([-7.5586553745083425, 110.80527999201193], { icon: customIcon }).addTo(this.map); // Menggunakan customIcon
-    marker.bindPopup("<b>Kopi Cendana</b><br>Hidden Gem Coffe and Resto in Surakarta.").openPopup();
+    marker.bindPopup(`
+      <b>Kopi Cendana</b><br>
+      Hidden Gem Coffee and Resto in Surakarta.<br>
+      <img src="assets/icon/cendana.png" alt="Kopi Cendana" style="width:100%; height:auto;">
+    `).openPopup();
   }
 }
