@@ -14,7 +14,7 @@ export class HomePage {
   ngOnInit() {}
 
   ionViewDidEnter() {
-    this.map = L.map('map').setView([-7.77771447063709, 110.39020388465696], 13);
+    this.map = L.map('map').setView([-7.5586553745083425, 110.80527999201193], 17);
 
     // Basemaps
     var basemap1 = L.tileLayer(
@@ -46,7 +46,6 @@ export class HomePage {
           '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
       }
     );
-
     basemap4.addTo(this.map);
     var baseMaps = {
       "OpenStreetMap": basemap1,
@@ -54,17 +53,17 @@ export class HomePage {
       "Esri Imagery": basemap3,
       "Stadia Dark Mode": basemap4,
     };
-
     L.control.layers(baseMaps).addTo(this.map);
 
     // Menambahkan marker kustom
     var customIcon = L.icon({
-      iconUrl: 'assets/icon/loc.png', // URL gambar ikon kustom di folder assets
-      iconSize: [50, 30], // Ukuran gambar ikon kustom
+      iconUrl: 'assets/icon/marker.png', // URL gambar ikon kustom di folder assets
+      iconSize: [40, 50], // Ukuran gambar ikon kustom
+      iconAnchor: [25, 50], // Posisi titik jangkar, [x, y] dari sudut kiri atas gambar
+      popupAnchor: [0, -50] // Posisi popup relatif terhadap titik jangkar
     });
-
     // Mengatur marker dengan ikon kustom
-    var marker = L.marker([-7.77771447063709, 110.39020388465696], { icon: customIcon }).addTo(this.map); // Menggunakan customIcon
-    marker.bindPopup("<b>Funkydak</b><br>waffle-nya enak bet kocak.").openPopup();
+    var marker = L.marker([-7.5586553745083425, 110.80527999201193], { icon: customIcon }).addTo(this.map); // Menggunakan customIcon
+    marker.bindPopup("<b>Kopi Cendana</b><br>Hidden Gem Coffe and Resto in Surakarta.").openPopup();
   }
 }
